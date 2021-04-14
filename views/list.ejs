@@ -1,0 +1,37 @@
+<%- include("header"); -%>
+
+<div class="box">
+	<div id="heading">
+	<h1> <%= typeOfList %> </h1>
+	</div>
+</div>
+	
+<div class="box">
+
+	<!-- newListItems is an array of Items document -->
+	<% newListItems.forEach(function(item) { %>
+		<form action="/delete" method="post">
+			<div class="item">
+				<input type="checkbox" name="checkitem" value="<%= item._id%>" onclick="this.form.submit();">
+				<input type="hidden" name="listType" value="<%= typeOfList %>"></input>
+				<!-- showing data from existing array of item objects -->
+				<p> <%= item.name %> </p>
+			</div>
+		</form>
+	<% }); %>
+
+	<!-- When user tries to add a new item & presses the submit button then it makes a POST
+		request and takes transfers the new item eneterd as well as the list route in which
+		the user is currently in and making POST request. Our server catches it instantly &
+		then we will check if the user the user made a POST request from is the root route
+		list or the custom list and will perfom the tasks accordingly and then we render the item to that particular list.
+	 -->
+	<form class="item" action="/" method="post" accept-charset="utf-8">
+
+		<input type="text" id="userInput" name="newItem" placeholder="Add Item" autocomplete="off">
+		<button type="submit" name="list" value="<%= typeOfList %>">+</button>
+
+	</form>
+</div>
+
+<%- include("footer"); -%>

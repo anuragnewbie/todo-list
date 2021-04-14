@@ -1,0 +1,23 @@
+{
+  "name": "todolist-v1",
+  "version": "1.0.0",
+  "description": "This is a to-do list project",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Anurag Chatterjee",
+  "license": "ISC",
+  "engines": {
+    "node": "14.15.3"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.10.0",
+    "lodash": "^4.17.21",
+    "mongoose": "^5.11.18",
+    "nodemon": "^2.0.7"
+  }
+}
